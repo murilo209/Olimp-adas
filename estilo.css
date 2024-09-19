@@ -15,35 +15,35 @@ body {
 }
 
 header, footer {
-  width: 90%; /* Ajusta a largura para 80% da tela */
-  max-width: 960px; /* Limita a largura máxima a 900px */
-  margin: 0 auto; /* Centraliza horizontalmente */
-  background-color: #3234bb; /* Cor de fundo */
-  color: #fff; /* Cor do texto */
-  text-align: center; /* Centraliza o texto */
-  padding: 10px 0; /* Espaçamento interno */
+  width: 90%; 
+  max-width: 960px; 
+  margin: 0 auto; 
+  background-color: #3234bb;
+  color: #fff; 
+  text-align: center;
+  padding: 10px 0; 
 }
 
 nav ul {
   display: flex;
-  justify-content: center; /* Centraliza os itens do menu */
+  justify-content: center;
   list-style-type: none;
   padding: 0;
 }
 
 nav ul li {
-  margin: 0 15px; /* Espaçamento entre os links */
+  margin: 0 15px; 
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: bold; /* Deixa o texto em negrito */
+  font-weight: bold; 
 }
 
 footer {
-  margin-top: 0px; /* Espaço acima do rodapé */
-  padding: 5px 0; /* Espaçamento interno */
+  margin-top: 0px; 
+  padding: 5px 0; 
 }
 
 
