@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+}
+
+.container {
+  width: 900px;
+  margin: auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 0px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
+}
+
+header, footer {
+  width: 90%; /* Ajusta a largura para 80% da tela */
+  max-width: 960px; /* Limita a largura máxima a 900px */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  background-color: #3234bb; /* Cor de fundo */
+  color: #fff; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 10px 0; /* Espaçamento interno */
+}
+
+nav ul {
+  display: flex;
+  justify-content: center; /* Centraliza os itens do menu */
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px; /* Espaçamento entre os links */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold; /* Deixa o texto em negrito */
+}
+
+footer {
+  margin-top: 0px; /* Espaço acima do rodapé */
+  padding: 5px 0; /* Espaçamento interno */
+}
+
+
+
+h2 {
+  margin-top: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}

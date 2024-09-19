@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"  type="image/jpg"      href="png/icone.png"/> 
+    <title>Contato - Talento</title>
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+            background-color: darkgrey;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            flex: 1; /* Permite que a caixa do conteúdo expanda para ocupar o espaço disponível */
+            max-width: 960px; /* Aumenta a largura da caixa */
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ffcc00; /* Cor destacada */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        textarea {
+            resize: none; /* Impede o redimensionamento */
+            height: 100px; /* Altura fixa para a textarea */
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50; /* Verde */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Verde escuro */
+        }
+
+        footer {
+            width: 100%; /* Faz o rodapé ocupar 100% do seu elemento pai */
+            max-width: 940px; /* Ajusta a largura do rodapé */
+            margin: 0 auto; /* Centraliza o rodapé */
+            text-align: center;
+            padding: 10px 0;
+            background-color: #3234bb;
+            border-radius: 0px;
+            position: relative; /* Permite ajustes se necessário */
+        }
+    </style>
+    <script>
+        function validar() {
+            var form = document.forms["contato-form"];
+            var nome = form["nome"].value.trim();
+            var email = form["email"].value.trim();
+            var avaliacao = form["avaliacao"].value;
+
+            if (nome === "") {
+                alert('Preencha o campo com o nome.');
+                form["nome"].focus();
+                return false;
+            }
+            if (email === "") {
+                alert('Preencha o campo com o e-mail.');
+                form["email"].focus();
+                return false;
+            }
+            if (!validateEmail(email)) {
+                alert('Por favor, insira um e-mail válido.');
+                form["email"].focus();
+                return false;
+            }
+            if (avaliacao === "") {
+                alert('Selecione uma nota de avaliação.');
+                form["avaliacao"].focus();
+                return false;
+            }
+            return true; // Formulário válido, pode ser enviado
+        }
+
+        function validateEmail(email) {
+            var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Contato</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="destaque.html">Destaque</a></li>
+                    <li><a href="desafios.html">Desafios</a></li>
+                    <li><a href="medalhas.html">Medalhas</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="container">
+        <form name="contato-form" action="confirma.html" method="post" onsubmit="return validar()">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="avaliacao">Nota de Avaliação do Site:</label>
+                <select id="avaliacao" name="avaliacao" required>
+                    <option value="">Selecione</option>
+                    <option value="1">1 - Muito Ruim</option>
+                    <option value="2">2 - Ruim</option>
+                    <option value="3">3 - Regular</option>
+                    <option value="4">4 - Bom</option>
+                    <option value="5">5 - Excelente</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comentario">Deixe aqui seu comentário:</label>
+                <textarea id="comentario" name="comentario"></textarea> <!-- Removido o atributo readonly -->
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; Murilo Alves Oliveira 2024. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
